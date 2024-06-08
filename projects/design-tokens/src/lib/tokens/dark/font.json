@@ -1,0 +1,13 @@
+{
+  "font": {
+    "family": {
+      "value": "'Roboto', sans-serif"
+    },
+    "size": {
+      "value": "16px"
+    },
+    "weight": {
+      "value": "400"
+    }
+  }
+}
