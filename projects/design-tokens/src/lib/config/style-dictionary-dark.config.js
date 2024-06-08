@@ -10,7 +10,7 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFormat({
   name: 'scss/themes',
   formatter: function(dictionary, config) {
-    return `:root.dark-theme {
+    return `:root .dark-theme {
       ${dictionary.allProperties.filter(prop => prop.filePath.includes('dark')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
     }`;
   }

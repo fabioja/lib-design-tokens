@@ -10,7 +10,7 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFormat({
   name: 'scss/themes',
   formatter: function(dictionary, config) {
-    return `:root.light-theme {
+    return `:root .light-theme {
       ${dictionary.allProperties.filter(prop => prop.filePath.includes('light')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
     }`;
   }
