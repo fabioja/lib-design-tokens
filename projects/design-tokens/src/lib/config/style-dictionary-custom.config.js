@@ -11,12 +11,12 @@ module.exports = {
   source: ['projects/design-tokens/src/lib/tokens/custom/*.json'],
   platforms: {
     scss: {
-      transformGroup: 'scss',
+      transformGroup: 'css',
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'theme-custom.scss',
-          format: 'scss/variables',
+          destination: 'theme-custom.css',
+          format: 'css/variables',
           filter: 'isCustomTheme'
         }
       ]

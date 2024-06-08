@@ -11,12 +11,12 @@ module.exports = {
   source: ['projects/design-tokens/src/lib/tokens/dark/*.json'],
   platforms: {
     scss: {
-      transformGroup: 'scss',
+      transformGroup: 'css',
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'theme-dark.scss',
-          format: 'scss/variables',
+          destination: 'theme-dark.css',
+          format: 'css/variables',
           filter: 'isDarkTheme'
         }
       ]

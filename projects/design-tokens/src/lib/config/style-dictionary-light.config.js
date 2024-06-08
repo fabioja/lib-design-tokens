@@ -11,12 +11,12 @@ module.exports = {
   source: ['projects/design-tokens/src/lib/tokens/light/*.json'],
   platforms: {
     scss: {
-      transformGroup: 'scss',
+      transformGroup: 'css',
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'theme-light.scss',
-          format: 'scss/variables',
+          destination: 'theme-light.css',
+          format: 'css/variables',
           filter: 'isLightTheme'
         }
       ]
