@@ -15,7 +15,7 @@ module.exports = {
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'thema-light.scss',
+          destination: 'theme-light.scss',
           format: 'scss/variables',
           filter: 'isLightTheme'
         }

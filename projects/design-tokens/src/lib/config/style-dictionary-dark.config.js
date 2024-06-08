@@ -15,7 +15,7 @@ module.exports = {
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'thema-dark.scss',
+          destination: 'theme-dark.scss',
           format: 'scss/variables',
           filter: 'isDarkTheme'
         }

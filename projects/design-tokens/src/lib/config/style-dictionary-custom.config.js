@@ -15,7 +15,7 @@ module.exports = {
       buildPath: 'projects/design-tokens/styles/',
       files: [
         {
-          destination: 'thema-custom.scss',
+          destination: 'theme-custom.scss',
           format: 'scss/variables',
           filter: 'isCustomTheme'
         }
