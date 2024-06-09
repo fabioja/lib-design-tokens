@@ -10,7 +10,7 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFormat({
   name: 'scss/themes',
   formatter: function(dictionary, config) {
-    return `:root .custom-theme {
+    return `.custom-theme {
       ${dictionary.allProperties.filter(prop => prop.filePath.includes('custom')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
     }`;
   }
