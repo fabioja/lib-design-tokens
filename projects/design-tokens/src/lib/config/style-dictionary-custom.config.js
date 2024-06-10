@@ -7,6 +7,15 @@ StyleDictionary.registerFilter({
   }
 });
 
+StyleDictionary.registerFormat({
+  name: 'scss/themes',
+  formatter: function(dictionary, config) {
+    return `.custom-theme {
+      ${dictionary.allProperties.filter(prop => prop.filePath.includes('custom')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
+    }`;
+  }
+});
+
 module.exports = {
   source: ['projects/design-tokens/src/lib/tokens/custom/*.json'],
   platforms: {
@@ -16,7 +25,7 @@ module.exports = {
       files: [
         {
           destination: 'theme-custom.scss',
-          format: 'scss/variables',
+          format: 'scss/themes',
           filter: 'isCustomTheme'
         }
       ]
