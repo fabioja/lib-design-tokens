@@ -1,17 +1,10 @@
 const StyleDictionary = require('style-dictionary');
 
-StyleDictionary.registerFilter({
-  name: 'isCustomTheme',
-  matcher: (token) => {
-    return token.filePath.indexOf('/custom') > -1
-  }
-});
-
 StyleDictionary.registerFormat({
   name: 'scss/themes',
-  formatter: function(dictionary, config) {
+  formatter: function(dictionary) {
     return `.custom-theme {
-      ${dictionary.allProperties.filter(prop => prop.filePath.includes('custom')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
+      ${dictionary.allProperties.map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
     }`;
   }
 });
@@ -26,7 +19,6 @@ module.exports = {
         {
           destination: 'theme-custom.scss',
           format: 'scss/themes',
-          filter: 'isCustomTheme'
         }
       ]
     }

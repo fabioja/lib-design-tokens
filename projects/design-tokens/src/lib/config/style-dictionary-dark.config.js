@@ -1,17 +1,10 @@
 const StyleDictionary = require('style-dictionary');
 
-StyleDictionary.registerFilter({
-  name: 'isDarkTheme',
-  matcher: (token) => {
-    return token.filePath.indexOf('dark') > -1
-  }
-});
-
 StyleDictionary.registerFormat({
   name: 'scss/themes',
-  formatter: function(dictionary, config) {
+  formatter: function(dictionary) {
     return `.dark-theme {
-      ${dictionary.allProperties.filter(prop => prop.filePath.includes('dark')).map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
+      ${dictionary.allProperties.map(prop => `--${prop.name}: ${prop.value};`).join('\n')}
     }`;
   }
 });
@@ -26,7 +19,6 @@ module.exports = {
         {
           destination: 'theme-dark.scss',
           format: 'scss/themes',
-          filter: 'isDarkTheme'
         }
       ]
     }
